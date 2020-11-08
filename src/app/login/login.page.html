@@ -1,14 +1,49 @@
 <ion-header>
   <ion-toolbar color="primary" >
     <ion-title  class="ion-no-padding ion-text-start ion-title">Cloudeat</ion-title>
-    <ion-buttons slot="primary">
-      <ion-button>Assign</ion-button>
-      <ion-menu-button autoHide="false"></ion-menu-button>
-    </ion-buttons>
   </ion-toolbar>
   
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-button color="primary">Login</ion-button>
+<div class="login">
+  <h1 class="ion-padding" color="primary">Login</h1>
+  <form #loginForm="ngForm" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked" color="primary">Username</ion-label>
+        <ion-input [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
+          required>
+        </ion-input>
+      </ion-item>
+
+      <ion-text color="danger">
+        <p [hidden]="username.valid || submitted == false" class="ion-padding-start">
+          Username is required
+        </p>
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">Password</ion-label>
+        <ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-text color="danger">
+        <p [hidden]="password.valid || submitted == false" class="ion-padding-start">
+          Password is required
+        </p>
+      </ion-text>
+    </ion-list>
+
+    <ion-row class="ion-margin-top ion-padding-top">
+      <ion-col>
+        <ion-button (click)="onLogin(loginForm)" type="submit" expand="block">Login</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="onSignup()" color="light" expand="block">Signup</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</div>
 </ion-content>

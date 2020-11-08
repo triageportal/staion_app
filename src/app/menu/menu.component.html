@@ -1,16 +1,18 @@
 <ion-menu side="start" menuId="first" contentId="main">
   <ion-header>
-    <ion-toolbar color="primary">
-      <ion-title>Start Menu</ion-title>
+    <ion-toolbar color="">
+      <ion-title class="ion-text-start"></ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
+      <ion-item lines="none" class="selected">Dashboard</ion-item>
+      <ion-item lines="none">Completed requests</ion-item>
+      <ion-item lines="none">Back office</ion-item>
+      <ion-item lines="none">Renew QR</ion-item>
+      <ion-item lines="none">Block QR</ion-item>
+      <ion-item lines="full">Logout</ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>
+<ion-router-outlet id="main"></ion-router-outlet>
