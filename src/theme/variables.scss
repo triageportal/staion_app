@@ -1,10 +1,35 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+  /** custom  **/
+
+
+
+  .ion-color-new-request {
+    --ion-color-base: #faffee;
+    --ion-color-contrast: #0c961a;
+  }
+
+  .ion-color-in-progress {
+    --ion-color-base: #fff5000d;
+    --ion-color-contrast: #ffc700;
+  }
+  
+  $colors: ( 
+    theme-color: #FF7222,
+    gray: #373737,
+    light-gray: #707070,
+    green-back: #faffee,
+    green-border: #0c961a, 
+    yellow-back: #fff5000d, 
+    yellow-border: #ffc700 
+  );
 /** Ionic CSS Variables **/
 :root {
+
+
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: #ff7222;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
