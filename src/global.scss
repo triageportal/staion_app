@@ -25,6 +25,8 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+@import './app/custom.scss';
+
 .ion-title {
     font-size: 24px;
 }
@@ -36,5 +38,85 @@ ion-toolbar {
     }
     ion-menu-button {
         margin-left: 10px;
+    }
+}
+
+.main {
+    display: flex;
+    height: 100%;
+    padding-bottom: 32px;
+    @media (max-width: 767px) and (orientation: 'portrait') {
+        flex-wrap: wrap;
+    }
+    .rows {
+        display: flex;
+        color: $gray;
+        padding: 0 20px 5px 20px;
+        .table {
+            width: 45%;
+        }
+        .assignee {
+            width: 40%;
+        }
+        .timer {
+            width: 15%;
+        }        
+    }
+    ion-list {
+        border-radius: 3px;
+    }
+    .new-requests {
+        width: 60%;       
+        margin-right: 6px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5px;      
+        @media (max-width: 767px) {
+            width: 100%;
+        }
+        .new-table {
+            background-color: #faffee;
+            border: 1px solid #0c961a;
+            border-radius: 3px;
+            flex: 1;
+            .rows {            
+                color: $theme-color;
+                padding: 0;
+                .timer {
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+        
+    }
+
+    .in-progress {
+        width: 40%;
+        margin-left: 6px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5px;      
+        @media (max-width: 767px) {
+            width: 100%;
+        }
+       .progress-table {
+           background-color: #fff5000d;
+            border: 1px solid #ffc700;
+            border-radius: 3px;
+            flex: 1;
+            .rows {
+                color: $theme-color;
+                padding: 0;
+            }
+        }
+        .rows {
+            .table {
+                width: 55%;
+            }
+            .assignee {
+                width: 45%;
+            }
+        }
     }
 }

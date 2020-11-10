@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ViewNotificationComponent } from './view-notification.component';
+import { NewTableComponent } from './new-table.component';
 
-describe('ViewNotificationComponent', () => {
-  let component: ViewNotificationComponent;
-  let fixture: ComponentFixture<ViewNotificationComponent>;
+describe('NewTableComponent', () => {
+  let component: NewTableComponent;
+  let fixture: ComponentFixture<NewTableComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewNotificationComponent ],
+      declarations: [ NewTableComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ViewNotificationComponent);
+    fixture = TestBed.createComponent(NewTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

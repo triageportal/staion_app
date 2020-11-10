@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { ViewNotificationComponent } from './view-notification/view-notification.component';
+import { RequestsService } from './requests.service';
+import { Request } from '../interfaces/request';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,22 +10,15 @@ import { ViewNotificationComponent } from './view-notification/view-notification
 })
 export class DashboardPage implements OnInit {
 
-  constructor(private modal: ModalController) { }
+  requests: Request[] = [];
+
+  constructor(private modal: ModalController, private requestsService: RequestsService) { }
 
   ngOnInit() {
-  }
+    this.requests = this.requestsService.requests;
+    /* subscribe requests */
 
-  openNotification(table) {
-    console.log("open");
-    
-    this.modal.create({
-      component: ViewNotificationComponent, 
-      componentProps: { 
-        table: table
-      }
-    }).then(modalEl => {
-      modalEl.present()
-    })
+
   }
 
 }

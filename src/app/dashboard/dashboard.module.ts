@@ -8,7 +8,8 @@ import { DashboardPageRoutingModule } from './dashboard-routing.module';
 
 import { DashboardPage } from './dashboard.page';
 import { MenuComponent } from '../menu/menu.component';
-import { ViewNotificationComponent } from './view-notification/view-notification.component';
+import { NewTableComponent } from './new-requests/new-table/new-table.component';
+import { ProgressTableComponent } from './in-progress/progress-table/progress-table.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { ViewNotificationComponent } from './view-notification/view-notification
     IonicModule,
     DashboardPageRoutingModule
   ],
-  declarations: [DashboardPage, MenuComponent, ViewNotificationComponent],
-  entryComponents: [ViewNotificationComponent]
+  declarations: [DashboardPage, MenuComponent, NewTableComponent, ProgressTableComponent],
+  entryComponents: []
 })
 export class DashboardPageModule {}

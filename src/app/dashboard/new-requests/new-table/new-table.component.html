@@ -1,0 +1,15 @@
+<div class="new-table">
+  <ion-list>
+    <ng-container *ngFor="let request of requests; let i=index">
+    <ion-item lines="full" color="new-request" *ngIf="request.status != 'progress'">
+      <ion-label>
+        <div class="rows"  (click)="openNotification(request)">
+          <span class="table">{{request.table}}</span>
+          <span class="assignee">{{request.assignee}}</span>
+          <ion-text class="timer" color="success">Timer</ion-text>
+        </div>
+      </ion-label>
+    </ion-item>
+    </ng-container>
+  </ion-list>
+</div>
