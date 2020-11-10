@@ -1,6 +1,7 @@
 import { ModalController } from '@ionic/angular';
 import { Component, OnInit, Input } from '@angular/core';
 import { Request } from '../../../interfaces/request';
+import { NewRequestModalComponent } from '../new-request-modal/new-request-modal.component';
 
 @Component({
   selector: 'app-new-table',
@@ -15,17 +16,19 @@ export class NewTableComponent implements OnInit {
 
   ngOnInit() {}
 
-/*   openNotification(table) {
-    console.log("open");
-    
+  openRequest(request: Request) {
     this.modal.create({
-      component: ViewNotificationComponent, 
+      component: NewRequestModalComponent, 
       componentProps: { 
-        table: table
+        request: request
       }
     }).then(modalEl => {
-      modalEl.present()
+      modalEl.present();
+      return modalEl.onDidDismiss();
+    }).then(resultData => {
+      console.log(resultData.role);
+      
     })
-  } */
+  }
 
 }

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="primary" >
+    <ion-title  class="ion-no-padding ion-text-start">In Progress</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel('cancel')">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>{{request}}
+  <ion-button (click)="onDone()">Done</ion-button>
+  <ion-button (click)="onCancel('cancel')">Cancel</ion-button>
+</ion-content>
