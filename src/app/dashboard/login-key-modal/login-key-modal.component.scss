@@ -1,0 +1,17 @@
+.login-wrap {
+    height: 100%;
+    width: 100%;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .login-box {
+        background-color: #fff;
+        height: 250px;
+        width: 350px;
+        border-radius: 10px;
+        ion-toolbar {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+    }
+}

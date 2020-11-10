@@ -1,3 +1,20 @@
-<p>
-  login-key-modal works!
-</p>
+<div class="login-wrap">
+  <div class="login-box">
+    
+      <ion-toolbar color="primary" >
+        <ion-title  class="ion-no-padding ion-text-start">Login Key</ion-title>
+        <ion-buttons slot="primary">
+          <ion-button (click)="onCancel('cancel')">
+            <ion-icon name="close"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      
+    
+    
+    
+      <ion-button size="small"  (click)="onLogin()">Ok</ion-button>
+      <ion-button size="small" color="danger"  (click)="onCancel('cancel')">Cancel</ion-button>
+    
+  </div>  
+</div>

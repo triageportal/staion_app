@@ -1,3 +1,4 @@
+import { LoginKeyModalComponent } from './../../login-key-modal/login-key-modal.component';
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
@@ -15,7 +16,8 @@ export class NewRequestModalComponent implements OnInit {
   ngOnInit() {}
 
   onProgress () {
-    this.onCancel('progress')
+    //this.onCancel('progress')
+    this.onLogin()
   }
 
   onDone () {
@@ -24,6 +26,20 @@ export class NewRequestModalComponent implements OnInit {
 
   onCancel (role) {
     this.modalCntl.dismiss(null, role)
+  }
+
+  onLogin() {
+    this.modalCntl.create({
+      component: LoginKeyModalComponent, 
+      cssClass: 'login-modal-css',
+      id: 'loginKey'
+    }).then(modalEl => {
+      modalEl.present();
+      return modalEl.onDidDismiss();
+    }).then(resultData => {
+      console.log(resultData.role);
+      
+    })
   }
 
 }
