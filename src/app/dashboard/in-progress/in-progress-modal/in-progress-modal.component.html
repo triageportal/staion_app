@@ -11,6 +11,8 @@
 </ion-header>
 
 <ion-content>{{request}}
-  <ion-button (click)="onDone()">Done</ion-button>
-  <ion-button (click)="onCancel('cancel')">Cancel</ion-button>
+  <ion-buttons class="footer">
+    <ion-button (click)="onDone()">Done</ion-button>
+    <ion-button color="danger" (click)="onCancel('cancel')">Cancel</ion-button>
+  </ion-buttons>
 </ion-content>

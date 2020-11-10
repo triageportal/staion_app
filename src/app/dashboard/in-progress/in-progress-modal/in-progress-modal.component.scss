@@ -1,0 +1,9 @@
+ion-buttons.footer {
+    position: absolute;
+    bottom: 13px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    ion-button {
+        margin: 0 7px;
+    }
+}
