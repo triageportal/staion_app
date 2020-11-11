@@ -20,9 +20,8 @@ export class ProgressTableComponent implements OnInit {
     
     this.modal.create({
       component: InProgressModalComponent, 
-      componentProps: { 
-        request: request
-      },
+      componentProps: { request: request },
+      cssClass: 'request-modal',
       id: 'inProgressId'
     }).then(modalEl => {
       modalEl.present()

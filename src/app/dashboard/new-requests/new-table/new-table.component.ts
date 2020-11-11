@@ -19,9 +19,8 @@ export class NewTableComponent implements OnInit {
   openRequest(request: Request) {
     this.modal.create({
       component: NewRequestModalComponent, 
-      componentProps: { 
-        request: request
-      },
+      componentProps: { request: request },
+      cssClass: 'request-modal',
       id: 'newRequestId'
     }).then(modalEl => {
       modalEl.present();
