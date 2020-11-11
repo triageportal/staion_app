@@ -21,7 +21,8 @@ export class NewTableComponent implements OnInit {
       component: NewRequestModalComponent, 
       componentProps: { 
         request: request
-      }
+      },
+      id: 'newRequestId'
     }).then(modalEl => {
       modalEl.present();
       return modalEl.onDidDismiss();

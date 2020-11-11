@@ -10,6 +10,8 @@ import { DashboardPage } from './dashboard.page';
 import { MenuComponent } from '../menu/menu.component';
 import { NewTableComponent } from './new-requests/new-table/new-table.component';
 import { ProgressTableComponent } from './in-progress/progress-table/progress-table.component';
+import { InProgressModalComponent } from './in-progress/in-progress-modal/in-progress-modal.component';
+import { NewRequestModalComponent } from './new-requests/new-request-modal/new-request-modal.component';
 
 @NgModule({
   imports: [
@@ -18,7 +20,7 @@ import { ProgressTableComponent } from './in-progress/progress-table/progress-ta
     IonicModule,
     DashboardPageRoutingModule
   ],
-  declarations: [DashboardPage, MenuComponent, NewTableComponent, ProgressTableComponent],
+  declarations: [DashboardPage, MenuComponent, NewTableComponent, ProgressTableComponent, InProgressModalComponent, NewRequestModalComponent],
   entryComponents: []
 })
 export class DashboardPageModule {}

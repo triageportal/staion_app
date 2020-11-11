@@ -10,6 +10,7 @@ import { ModalController } from '@ionic/angular';
 export class NewRequestModalComponent implements OnInit {
 
   @Input() request: Request;
+  backCover = true;
   
   constructor(private modalCntl: ModalController) { }
 
@@ -25,20 +26,24 @@ export class NewRequestModalComponent implements OnInit {
   }
 
   onCancel (role) {
-    this.modalCntl.dismiss(null, role)
+    this.modalCntl.dismiss(null, role, 'newRequestId')
   }
 
   onLogin() {
+    this.backCover = false;
+    console.log(this.backCover);
+    
     this.modalCntl.create({
       component: LoginKeyModalComponent, 
       cssClass: 'login-modal-css',
-      id: 'loginKey'
+      id: 'loginKeyId'
     }).then(modalEl => {
       modalEl.present();
       return modalEl.onDidDismiss();
     }).then(resultData => {
       console.log(resultData.role);
-      
+      this.backCover = true;
+      this.onCancel('login')
     })
   }
 

@@ -8,6 +8,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class LoginKeyModalComponent implements OnInit {
 
+  test = 'mytest'
   constructor(private modalCntl: ModalController) { }
 
   ngOnInit() {}
@@ -17,7 +18,7 @@ export class LoginKeyModalComponent implements OnInit {
   }
 
   onCancel (role) {
-    this.modalCntl.dismiss('loginKey', role, 'loginKey')
+    this.modalCntl.dismiss('loginKey', role, 'loginKeyId')
   }
 
 }

@@ -122,5 +122,18 @@ ion-toolbar {
 }
 
 .login-modal-css .modal-wrapper {
-    background-color: #00000059;
+    //background-color: #00000059;
+    height: 250px;
+    width: 350px;
+    
  }
+
+ .back-cover {
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #00000059;
+    z-index: 10;
+}

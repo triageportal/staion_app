@@ -22,7 +22,8 @@ export class ProgressTableComponent implements OnInit {
       component: InProgressModalComponent, 
       componentProps: { 
         request: request
-      }
+      },
+      id: 'inProgressId'
     }).then(modalEl => {
       modalEl.present()
       return modalEl.onDidDismiss();
