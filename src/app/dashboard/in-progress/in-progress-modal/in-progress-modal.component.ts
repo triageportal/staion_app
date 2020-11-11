@@ -11,15 +11,24 @@ import { LoginKeyModalComponent } from '../../login-key-modal/login-key-modal.co
 export class InProgressModalComponent implements OnInit {
 
   @Input() request: Request;
+  @Input() loginRequired: boolean;
   backCover = true;
 
   constructor(private modalCntl: ModalController) { }
 
   ngOnInit() {}
 
+  onBackToNew() {
+    if (this.loginRequired) {
+      this.onLogin()
+    }
+  }
+
+  
   onDone () {
-    //this.onCancel('done')
-    this.onLogin()
+    if (this.loginRequired) {
+      this.onLogin()
+    }
   }
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { InProgressModalComponent } from '../in-progress-modal/in-progress-modal.component';
+import { AuthService } from '../../../auth/auth.service';
 
 @Component({
   selector: 'app-progress-table',
@@ -11,7 +12,7 @@ export class ProgressTableComponent implements OnInit {
 
   @Input() requests: Request[] = [];
   
-  constructor(private modal: ModalController) { }
+  constructor(private modal: ModalController, private auth: AuthService) { }
 
   ngOnInit() {}
 
@@ -20,7 +21,7 @@ export class ProgressTableComponent implements OnInit {
     
     this.modal.create({
       component: InProgressModalComponent, 
-      componentProps: { request: request },
+      componentProps: { request: request, loginRequired: this.auth.user.loginRequired },
       cssClass: 'request-modal',
       id: 'inProgressId'
     }).then(modalEl => {

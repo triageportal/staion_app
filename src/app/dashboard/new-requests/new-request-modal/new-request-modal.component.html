@@ -41,7 +41,8 @@
     </ion-row>
     </ion-grid>
 <ion-buttons class="footer">
-  <ion-button (click)="onProgress()">In Progress</ion-button>
+  <ion-button (click)="onAssign()">Assign</ion-button>
+  <ion-button color="warning" (click)="onProgress()">In Progress</ion-button>
   <ion-button color="success" (click)="onDone()">Done</ion-button>
   <ion-button color="danger" (click)="onCancel('cancel')">Cancel</ion-button>
 </ion-buttons>

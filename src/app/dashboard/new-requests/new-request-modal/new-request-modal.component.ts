@@ -10,19 +10,30 @@ import { ModalController } from '@ionic/angular';
 export class NewRequestModalComponent implements OnInit {
 
   @Input() request: Request;
+  @Input() loginRequired: boolean;
+
   backCover = true;
   
   constructor(private modalCntl: ModalController) { }
 
   ngOnInit() {}
 
-  onProgress () {
-    //this.onCancel('progress')
+  onAssign () {
     this.onLogin()
+    
+    
+  }
+
+  onProgress () {
+    if (this.loginRequired) {
+      this.onLogin()
+    }
   }
 
   onDone () {
-    this.onCancel('done')
+    if (this.loginRequired) {
+      this.onLogin()
+    }
   }
 
   onCancel (role) {
