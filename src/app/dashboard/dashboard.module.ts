@@ -1,3 +1,4 @@
+import { LoginKeyModalComponent } from './login-key-modal/login-key-modal.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -20,7 +21,7 @@ import { NewRequestModalComponent } from './new-requests/new-request-modal/new-r
     IonicModule,
     DashboardPageRoutingModule
   ],
-  declarations: [DashboardPage, MenuComponent, NewTableComponent, ProgressTableComponent, InProgressModalComponent, NewRequestModalComponent],
+  declarations: [DashboardPage, MenuComponent, NewTableComponent, ProgressTableComponent, InProgressModalComponent, NewRequestModalComponent, LoginKeyModalComponent],
   entryComponents: []
 })
 export class DashboardPageModule {}

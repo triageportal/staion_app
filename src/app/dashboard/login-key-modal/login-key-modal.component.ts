@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login-key-modal',
@@ -8,13 +9,21 @@ import { ModalController } from '@ionic/angular';
 })
 export class LoginKeyModalComponent implements OnInit {
 
-  test = 'mytest'
+  loginKey = '';
+  login = { username: '', password: '' };
+  submitted = false;
+  
   constructor(private modalCntl: ModalController) { }
 
   ngOnInit() {}
 
-  onLogin () {
-    this.onCancel('done')
+  onLogin(form: NgForm) {
+    this.submitted = true;
+    if (form.valid) {
+      console.log(form.value);
+      //this.onCancel('done')
+      
+    }
   }
 
   onCancel (role) {

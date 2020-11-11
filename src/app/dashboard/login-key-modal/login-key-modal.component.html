@@ -9,11 +9,25 @@
           </ion-button>
         </ion-buttons>
       </ion-toolbar>
+      <div class="login-input">
+        <form #loginForm="ngForm" novalidate>
+          <ion-list>
+            <ion-item>
+              <ion-input [(ngModel)]="login.password" placeholder="Login key" name="password" type="password" #password="ngModel" required>
+              </ion-input>
+            </ion-item>
       
-    
+            <ion-text color="danger">
+              <p [hidden]="password.valid || submitted == false" class="ion-padding-start">
+                Login key is required
+              </p>
+            </ion-text>
+          </ion-list>
+        </form>
+    </div>
     
     <ion-buttons class="footer">
-      <ion-button size="small"  (click)="onLogin()">Ok</ion-button>
+      <ion-button size="small"  (click)="onLogin(loginForm)">Ok</ion-button>
       <ion-button size="small" color="danger"  (click)="onCancel('cancel')">Cancel</ion-button>
     </ion-buttons>
   </div>  

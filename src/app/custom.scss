@@ -130,10 +130,39 @@ ion-toolbar {
     }
 }
 
-.request-modal .modal-wrapper{
-    
+.request-modal .modal-wrapper{   
     @media (min-width: 768px) {
         height: 40%;
     }
+}
 
+
+.login-box {
+    background-color: #fff;
+    height: 250px;
+    width: 350px;
+    border-radius: 10px;
+    position: relative;
+
+    ion-toolbar {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .login-input {
+        margin: 50px;
+        ion-input {
+            //border-bottom: 1px solid $light-gray;
+        }
+    }
+
+    ion-buttons.footer {
+        position: absolute;
+        bottom: 13px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        ion-button {
+            margin: 0 7px;
+        }
+    }
 }
