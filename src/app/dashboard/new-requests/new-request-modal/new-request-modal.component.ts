@@ -1,3 +1,4 @@
+import { Request } from './../../../interfaces/request';
 import { LoginKeyModalComponent } from './../../login-key-modal/login-key-modal.component';
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
@@ -19,9 +20,7 @@ export class NewRequestModalComponent implements OnInit {
   ngOnInit() {}
 
   onAssign () {
-    this.onLogin()
-    
-    
+    this.onLogin() 
   }
 
   onProgress () {
@@ -42,7 +41,6 @@ export class NewRequestModalComponent implements OnInit {
 
   onLogin() {
     this.backCover = false;
-    console.log(this.backCover);
     
     this.modalCntl.create({
       component: LoginKeyModalComponent, 
@@ -52,10 +50,14 @@ export class NewRequestModalComponent implements OnInit {
       modalEl.present();
       return modalEl.onDidDismiss();
     }).then(resultData => {
-      console.log(resultData.role);
       this.backCover = true;
-      this.onCancel('login')
+      this.assign(resultData.role)
     })
+  }
+
+  assign(data){
+    this.request.assignee = data.name;
+    this.request.assigneeId = data.id;  
   }
 
 }
