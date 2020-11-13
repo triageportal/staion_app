@@ -3,6 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Request } from '../../../interfaces/request';
 import { NewRequestModalComponent } from '../new-request-modal/new-request-modal.component';
 import { AuthService } from '../../../auth/auth.service';
+import { timer } from 'rxjs'
 
 @Component({
   selector: 'app-new-table',
@@ -31,5 +32,4 @@ export class NewTableComponent implements OnInit {
       
     })
   }
-
 }

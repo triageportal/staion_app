@@ -1,7 +1,7 @@
 <div class="new-table">
   <ion-list>
     <ng-container *ngFor="let request of requests; let i=index">
-    <ion-item lines="full" color="new-request" *ngIf="request.status != 'progress'">
+    <ion-item lines="full" color="new-request" *ngIf="request.status == 'new'">
       <ion-label>
         <div class="rows"  (click)="openRequest(request)">
           <span class="table">{{request.table}}</span>

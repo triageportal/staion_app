@@ -20,29 +20,49 @@ export class NewRequestModalComponent implements OnInit {
   ngOnInit() {}
 
   onAssign () {
-    this.onLogin() 
+    const assignee = this.onLogin()
+    assignee.then(data => {
+      if (data && data != 'cancel') this.assign(data);     
+    })
   }
 
   onProgress () {
     if (this.loginRequired) {
-      this.onLogin()
+      const assignee = this.onLogin()
+      assignee.then(data => {
+        if (data && data != 'cancel') this.changeStatus('progress')     
+      })
+    } else {
+      this.changeStatus('progress')
     }
   }
 
   onDone () {
     if (this.loginRequired) {
-      this.onLogin()
+      const assignee = this.onLogin()
+      assignee.then(data => {
+        if (data && data != 'cancel') this.changeStatus('done')     
+      })
+    } else {
+      this.changeStatus('done')
     }
+  }
+
+
+
+  changeStatus(status) {
+    this.request.status = status;
+    this.onCancel('Status changed' + status)
   }
 
   onCancel (role) {
     this.modalCntl.dismiss(null, role, 'newRequestId')
   }
 
-  onLogin() {
+  onLogin(){
     this.backCover = false;
     
-    this.modalCntl.create({
+    return this.modalCntl.create({
       component: LoginKeyModalComponent, 
       cssClass: 'login-modal-css',
       id: 'loginKeyId'
@@ -51,7 +71,7 @@ export class NewRequestModalComponent implements OnInit {
       return modalEl.onDidDismiss();
     }).then(resultData => {
       this.backCover = true;
-      this.assign(resultData.role)
+      return resultData.role
     })
   }
 
