@@ -78,6 +78,7 @@ export class NewRequestModalComponent implements OnInit {
   assign(data){
     this.request.assignee = data.name;
     this.request.assigneeId = data.id;  
+    this.onCancel('assign')
   }
 
 }

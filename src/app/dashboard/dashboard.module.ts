@@ -13,6 +13,7 @@ import { NewTableComponent } from './new-requests/new-table/new-table.component'
 import { ProgressTableComponent } from './in-progress/progress-table/progress-table.component';
 import { InProgressModalComponent } from './in-progress/in-progress-modal/in-progress-modal.component';
 import { NewRequestModalComponent } from './new-requests/new-request-modal/new-request-modal.component';
+import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,7 @@ import { NewRequestModalComponent } from './new-requests/new-request-modal/new-r
     IonicModule,
     DashboardPageRoutingModule
   ],
-  declarations: [DashboardPage, MenuComponent, NewTableComponent, ProgressTableComponent, InProgressModalComponent, NewRequestModalComponent, LoginKeyModalComponent],
+  declarations: [DashboardPage, MenuComponent, NewTableComponent, ProgressTableComponent, InProgressModalComponent, NewRequestModalComponent, LoginKeyModalComponent, TimerComponent],
   entryComponents: []
 })
 export class DashboardPageModule {}

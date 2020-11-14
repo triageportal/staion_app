@@ -6,7 +6,9 @@
         <div class="rows"  (click)="openRequest(request)">
           <span class="table">{{request.table}}</span>
           <span class="assignee">{{request.assignee}}</span>
-          <ion-text class="timer" color="success">Timer</ion-text>
+          <ion-text class="timer" color="success">
+            <app-timer></app-timer>
+          </ion-text>
         </div>
       </ion-label>
     </ion-item>
