@@ -22,12 +22,26 @@
       <app-new-table [requests]="requests"></app-new-table>
     </div>
     <div class="in-progress">
-      <h3>In progress</h3>
+      <div class="headers">
+        <h3 [ngClass]="{'active': progressActive}" (click)="slideToProgress()">In progress</h3>
+        <h3 [ngClass]="{'active': doneActive}" (click)="slideToDone()">Done</h3>
+      </div>
+      
       <div class="rows">
         <span class="table">Table</span>
         <span class="assignee">Assignee</span>
       </div>
-      <app-progress-table [requests]="requests"></app-progress-table>
+      
+
+        <ion-slides >
+          <ion-slide class="ion-no-padding">
+            <app-progress-table [requests]="requests"></app-progress-table>
+          </ion-slide>
+          <ion-slide>
+            <app-progress-table [requests]="requests"></app-progress-table>
+          </ion-slide>
+        </ion-slides>
+
     </div>
   </div>
 </ion-content>

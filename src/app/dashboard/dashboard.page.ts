@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonSlides} from '@ionic/angular';
 import { RequestsService } from './requests.service';
 import { Request } from '../interfaces/request';
 
@@ -11,14 +11,29 @@ import { Request } from '../interfaces/request';
 export class DashboardPage implements OnInit {
 
   requests: Request[] = [];
+  @ViewChild(IonSlides) slides: IonSlides;
+  progressActive = true;
+  doneActive = false;
 
-  constructor(private modal: ModalController, private requestsService: RequestsService) { }
+  constructor(private requestsService: RequestsService) { }
 
   ngOnInit() {
     this.requests = this.requestsService.requests;
     /* subscribe requests */
 
 
+  }
+
+  slideToDone () {
+    this.slides.slideNext()
+    this.doneActive = true;
+    this.progressActive = false;
+  }
+
+  slideToProgress () {
+    this.slides.slidePrev()
+    this.doneActive = false;
+    this.progressActive = true;
   }
 
 }

@@ -48,6 +48,7 @@ ion-toolbar {
         margin-bottom: 5px;      
         @media (max-width: 767px) {
             width: 100%;
+            margin: 0;
         }
         .new-table {
             background-color: #faffee;
@@ -72,14 +73,44 @@ ion-toolbar {
         display: flex;
         flex-direction: column;
         margin-bottom: 5px;      
-        @media (max-width: 767px) {
+        @media (max-width: 767px) and (orientation: 'portrait') {
             width: 100%;
+            margin: 0;
+        }
+        @media (max-width: 767px) and (orientation: 'landscape') {
+            margin-bottom: 0;
+        }
+
+        .headers {
+            display: flex;
+            justify-content: space-between;
+            padding-right: 3px;
+            color: #d0d0d0;
+            .active {
+                color: #000;
+            }
+            h3:not(.active) {
+                cursor: pointer;
+            }
+        }
+
+        ion-slides {
+            height: 100%;
+            app-progress-table {
+                height: 100%;
+            }
         }
        .progress-table {
            background-color: #fff5000d;
             border: 1px solid #ffc700;
             border-radius: 3px;
-            flex: 1;
+            width: 91vw;
+            @media (min-width: 768px) {
+                width: 38vw;
+            }
+            @media (max-width: 767px) and (orientation: 'landscape') {
+                width: 38vw;
+            }
             .rows {
                 color: $theme-color;
                 padding: 0;
