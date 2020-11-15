@@ -1,9 +1,9 @@
 <div class="done-table">
   <ion-list>
     <ng-container *ngFor="let request of requests; let i=index">
-      <ion-item lines="full" color="done" *ngIf="request.status == 'done'">
+      <ion-item lines="full" color="done">
         <ion-label>
-          <div class="rows" (click)="openRequest(request)">
+          <div class="rows" (click)="openRequest(request, i)">
             <span class="table">{{request.table}}</span>
             <span class="assignee">{{request.assignee}}</span>
           </div>

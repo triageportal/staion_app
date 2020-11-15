@@ -4,6 +4,7 @@ import { Request } from '../../../interfaces/request';
 import { NewRequestModalComponent } from '../new-request-modal/new-request-modal.component';
 import { AuthService } from '../../../auth/auth.service';
 import { timer } from 'rxjs'
+import { RequestsService } from '../../requests.service';
 
 @Component({
   selector: 'app-new-table',
@@ -14,7 +15,7 @@ export class NewTableComponent implements OnInit {
 
   @Input() requests: Request[] = [];
 
-  constructor(private modal: ModalController, private auth: AuthService) { }
+  constructor(private modal: ModalController, private auth: AuthService, private requestsService: RequestsService) { }
 
   ngOnInit() {}
 

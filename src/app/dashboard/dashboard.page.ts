@@ -10,17 +10,21 @@ import { Request } from '../interfaces/request';
 })
 export class DashboardPage implements OnInit {
 
-  requests: Request[] = [];
   @ViewChild(IonSlides) slides: IonSlides;
+  newRequests: Request[] = [];
+  progressRequests: Request[] = [];
+  doneRequests: Request[] = [];
   progressActive = true;
   doneActive = false;
 
   constructor(private requestsService: RequestsService) { }
 
   ngOnInit() {
-    this.requests = this.requestsService.requests;
-    /* subscribe requests */
+    this.newRequests = this.requestsService.newRequests;
 
+    this.progressRequests = this.requestsService.progressRequests;
+
+    this.doneRequests = this.requestsService.doneRequests;
 
   }
 

@@ -16,10 +16,10 @@ export class DoneTableComponent implements OnInit {
 
   ngOnInit() {}
 
-  openRequest(request: Request) {
+  openRequest(request: Request, index) {
     this.modal.create({
       component: DoneModalComponent, 
-      componentProps: { request: request, loginRequired: this.auth.user.loginRequired },
+      componentProps: { request: request, loginRequired: this.auth.user.loginRequired, index: index },
       cssClass: 'request-modal',
       id: 'doneId'
     }).then(modalEl => {

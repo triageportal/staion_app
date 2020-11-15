@@ -19,7 +19,7 @@
         <span class="assignee">Assignee</span>
         <span class="timer">Timer</span>
       </div>
-      <app-new-table [requests]="requests"></app-new-table>
+      <app-new-table [requests]="newRequests"></app-new-table>
     </div>
     <div class="in-progress">
       <div class="headers">
@@ -35,10 +35,10 @@
 
         <ion-slides >
           <ion-slide class="ion-no-padding">
-            <app-progress-table [requests]="requests"></app-progress-table>
+            <app-progress-table [requests]="progressRequests"></app-progress-table>
           </ion-slide>
           <ion-slide class="ion-no-padding">
-            <app-done-table [requests]="requests"></app-done-table>
+            <app-done-table [requests]="doneRequests"></app-done-table>
             <!-- <app-progress-table [requests]="requests"></app-progress-table> -->
           </ion-slide>
         </ion-slides>

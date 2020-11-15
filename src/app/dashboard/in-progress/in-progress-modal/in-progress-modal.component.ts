@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Request } from '../../../interfaces/request';
 import { ModalController } from '@ionic/angular';
 import { LoginKeyModalComponent } from '../../login-key-modal/login-key-modal.component';
+import { RequestsService } from '../../requests.service';
 
 @Component({
   selector: 'app-in-progress-modal',
@@ -12,9 +13,11 @@ export class InProgressModalComponent implements OnInit {
 
   @Input() request: Request;
   @Input() loginRequired: boolean;
+  @Input() index: boolean;
+
   backCover = true;
 
-  constructor(private modalCntl: ModalController) { }
+  constructor(private modalCntl: ModalController, private requestService: RequestsService) { }
 
   ngOnInit() {}
 
@@ -22,10 +25,10 @@ export class InProgressModalComponent implements OnInit {
     if (this.loginRequired) {
       const assignee = this.onLogin()
       assignee.then(data => {
-        if (data && data != 'cancel') this.changeStatus('new')     
+        if (data && data != 'cancel') this.changeStatusToNew()     
       })
     } else {
-      this.changeStatus('new')
+      this.changeStatusToNew() 
     }
   }
 
@@ -33,18 +36,23 @@ export class InProgressModalComponent implements OnInit {
     if (this.loginRequired) {
       const assignee = this.onLogin()
       assignee.then(data => {
-        if (data && data != 'cancel') this.changeStatus('done')     
+        if (data && data != 'cancel') this.changeStatusToDone()    
       })
     } else {
-      this.changeStatus('done')
+      this.changeStatusToDone()
     }
   }
 
 
 
-  changeStatus(status) {
-    this.request.status = status;
-    this.onCancel('Status changed' + status)
+  changeStatusToNew() {
+    this.requestService.moveProgressToNew(this.index)
+    this.onCancel('progressToNew');
+  }
+
+  changeStatusToDone() {
+    this.requestService.moveProgressToDone(this.index);
+    this.onCancel('progressTodone');
   }
 
 

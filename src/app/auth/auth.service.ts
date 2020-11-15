@@ -10,7 +10,7 @@ export class AuthService {
   private _user = {
     id: 1,
     name: 'Allora Pizza & Pasta',
-    loginRequired: true
+    loginRequired: false
   }
 
   get user () {
