@@ -16,6 +16,11 @@ ion-toolbar {
     }
 }
 
+app-new-table, app-progress-table, app-done-table {
+    flex: 1;
+    display: flex;
+}
+
 .main {
     display: flex;
     height: 100%;
@@ -96,7 +101,7 @@ ion-toolbar {
 
         ion-slides {
             height: 100%;
-            app-progress-table {
+            app-progress-table, app-done-table {
                 height: 100%;
             }
         }
@@ -115,7 +120,28 @@ ion-toolbar {
                 color: $theme-color;
                 padding: 0;
             }
+            &.done {
+                border-color: red;
+                background-color: rgba(255, 0, 0, 0.137);
+            }
         }
+
+        .done-table {
+            background-color: #ff000005;
+             border: 1px solid #ff0000;
+             border-radius: 3px;
+             width: 91vw;
+             @media (min-width: 768px) {
+                 width: 38vw;
+             }
+             @media (max-width: 767px) and (orientation: 'landscape') {
+                 width: 38vw;
+             }
+             .rows {
+                 color: $theme-color;
+                 padding: 0;
+             }
+         }
         .rows {
             .table {
                 width: 55%;
@@ -191,13 +217,14 @@ ion-toolbar {
         }
     }
 
-    ion-buttons.footer {
-        position: absolute;
-        bottom: 13px;
-        left: 50%;
-        transform: translate(-50%, 0);
-        ion-button {
-            margin: 0 7px;
-        }
+}
+
+ion-buttons.footer {
+    position: absolute;
+    bottom: 13px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    ion-button {
+        margin: 0 7px;
     }
 }

@@ -1,0 +1,14 @@
+<div class="done-table">
+  <ion-list>
+    <ng-container *ngFor="let request of requests; let i=index">
+      <ion-item lines="full" color="done" *ngIf="request.status == 'done'">
+        <ion-label>
+          <div class="rows" (click)="openRequest(request)">
+            <span class="table">{{request.table}}</span>
+            <span class="assignee">{{request.assignee}}</span>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+</div>

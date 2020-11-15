@@ -14,6 +14,8 @@ import { ProgressTableComponent } from './in-progress/progress-table/progress-ta
 import { InProgressModalComponent } from './in-progress/in-progress-modal/in-progress-modal.component';
 import { NewRequestModalComponent } from './new-requests/new-request-modal/new-request-modal.component';
 import { TimerComponent } from './timer/timer.component';
+import { DoneTableComponent } from './done/done-table/done-table.component';
+import { DoneModalComponent } from './done/done-modal/done-modal.component';
 
 @NgModule({
   imports: [
@@ -22,7 +24,7 @@ import { TimerComponent } from './timer/timer.component';
     IonicModule,
     DashboardPageRoutingModule
   ],
-  declarations: [DashboardPage, MenuComponent, NewTableComponent, ProgressTableComponent, InProgressModalComponent, NewRequestModalComponent, LoginKeyModalComponent, TimerComponent],
+  declarations: [DashboardPage, MenuComponent, NewTableComponent, ProgressTableComponent, InProgressModalComponent, NewRequestModalComponent, LoginKeyModalComponent, TimerComponent, DoneTableComponent, DoneModalComponent],
   entryComponents: []
 })
 export class DashboardPageModule {}
