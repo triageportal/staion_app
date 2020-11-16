@@ -74,9 +74,9 @@ export class RequestsService {
   }
 
   moveNewToDone (index) {
-    const request = this.doneRequests.splice(index, 1);
+    const request = this.newRequests.splice(index, 1);
     request[0]['status'] = 'done';
-    this.progressRequests.push(request[0]);
+    this.doneRequests.push(request[0]);
   }
 
    

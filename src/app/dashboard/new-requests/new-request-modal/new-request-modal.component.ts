@@ -56,7 +56,7 @@ export class NewRequestModalComponent implements OnInit {
 
   changeStatusToDone() {
     this.requestService.moveNewToDone(this.index);
-    this.onCancel('newToProgress');
+    this.onCancel('newToDone');
   }
 
   changeStatusToProgress() {

@@ -37,4 +37,8 @@ export class LoginPage implements OnInit {
       
     }
   }
+
+  onSignup() {
+    
+  }
 }
