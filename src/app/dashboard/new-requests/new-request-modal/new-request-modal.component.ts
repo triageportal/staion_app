@@ -29,6 +29,7 @@ export class NewRequestModalComponent implements OnInit {
   }
 
   onProgress () {
+    console.log(this.index);
     if (this.loginRequired) {
       const assignee = this.onLogin()
       assignee.then(data => {

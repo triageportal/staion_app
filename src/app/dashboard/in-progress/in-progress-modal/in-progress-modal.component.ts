@@ -22,6 +22,8 @@ export class InProgressModalComponent implements OnInit {
   ngOnInit() {}
 
   onBackToNew () {
+    console.log(this.index);
+    
     if (this.loginRequired) {
       const assignee = this.onLogin()
       assignee.then(data => {

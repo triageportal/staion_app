@@ -16,12 +16,12 @@ export class ProgressTableComponent implements OnInit {
 
   ngOnInit() {}
 
-  openRequest(request: Request) {
+  openRequest(request: Request, index) {
     console.log("open");
     
     this.modal.create({
       component: InProgressModalComponent, 
-      componentProps: { request: request, loginRequired: this.auth.user.loginRequired },
+      componentProps: { request: request, loginRequired: this.auth.user.loginRequired, index: index},
       cssClass: 'request-modal',
       id: 'inProgressId'
     }).then(modalEl => {
